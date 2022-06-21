@@ -12,5 +12,31 @@ terraform {
 
 provider "aws" {
   version = "~>3.0"
-  region  = "east-us-1"
+  region  = "us-west-2"
+}
+
+resource "aws_s3_bucket" "s3Bucket" {
+     bucket = "ttran321-terraformstr"
+     acl       = "public-read"
+
+     policy  = <<EOF
+{
+     "id" : "MakePublic",
+   "version" : "2012-10-17",
+   "statement" : [
+      {
+         "action" : [
+             "s3:GetObject"
+          ],
+         "effect" : "Allow",
+         "resource" : "arn:aws:s3:::ttran321-terraformstr/*",
+         "principal" : "*"
+      }
+    ]
+  }
+EOF
+
+   website {
+       index_document = "index.html"
+   }
 }
