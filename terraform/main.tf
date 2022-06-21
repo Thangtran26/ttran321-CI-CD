@@ -8,6 +8,12 @@ terraform {
 
   required_version = ">=0.14.9"
 
+  backend "s3" {
+       bucket = "ttran321-terraformstr"
+       key    = "arn:aws:kms:us-west-2:786678469955:key/138ec224-f4f9-4bc9-a294-4c65c145c3ea"
+       region = "us-west-2"
+   }
+
 }
 
 provider "aws" {
@@ -16,7 +22,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "s3Bucket" {
-     bucket = "ttran321-terraformstr"
+     bucket = "ttran321-webapp"
      acl       = "public-read"
 
      policy  = <<EOF
@@ -29,7 +35,7 @@ resource "aws_s3_bucket" "s3Bucket" {
              "s3:GetObject"
           ],
          "effect" : "Allow",
-         "resource" : "arn:aws:s3:::ttran321-terraformstr/*",
+         "resource" : "arn:aws:s3:::ttran321-webapp/*",
          "principal" : "*"
       }
     ]
