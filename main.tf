@@ -5,7 +5,7 @@ terraform {
   backend "s3" {
        bucket = "ttran321-terraformstr"
        key    = "githubaction"
-       role_arn = "arn:aws:iam::786678469955:user/ttran321-iam"
+       role_arn = "arn:aws:iam::786678469955:role/ttran321-s3-role"
        region = "us-west-2"
    }
 #arn:aws:iam::786678469955:user/ttran321-iam
