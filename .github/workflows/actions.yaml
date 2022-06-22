@@ -47,6 +47,6 @@ jobs:
       env:
         SOURCE_DIR: './src'
         
-        AWS_S3_BUCKET: 'ttran321-terraformstr'
+        AWS_S3_BUCKET: 'ttran321-webapp'
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
