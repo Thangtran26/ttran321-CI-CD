@@ -6,8 +6,6 @@ terraform {
     }
   }
 
-  
-
   backend "s3" {
        bucket = "ttran321-terraformstr"
        key    = "githubaction"
