@@ -22,7 +22,9 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init
+        run: terraform -chdir=/home/runner/work/dns-cloudnovi.dev/dns-cloudnovi.dev/main init
+          -backend-config="access_key=${{ secrets.AWS_ACCESS_KEY }}"
+          -backend-config="secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY}}"
     
       - name: Terraform Plan
         id: plan
