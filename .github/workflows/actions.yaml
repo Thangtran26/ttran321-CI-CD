@@ -22,7 +22,7 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: /home/runner/work/_temp/be358776-b040-434e-b5ae-16f510a8215a/terraform-bin init 
+        run: terraform init 
           -backend-config="access_key=${{ secrets.AWS_ACCESS_KEY }}"
           -backend-config="secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY}}"
     
