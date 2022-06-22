@@ -4,7 +4,7 @@ terraform {
 
   backend "s3" {
        bucket = "ttran321-terraformstr"
-       key    = "arn:aws:kms:us-west-2:786678469955:key/138ec224-f4f9-4bc9-a294-4c65c145c3ea"
+       key    = "githubaction"
        region = "us-west-2"
    }
 
